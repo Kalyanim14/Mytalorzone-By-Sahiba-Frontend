@@ -1,3 +1,4 @@
+HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Mytalorzone-By-Sahiba-Frontend
+Mytalorzone By Sahiba is a clothing brand that offers creative, unique, and diverse clothing for girls, including traditional, western, and trendy styles.
+ 485b7ea92f757788242e9551a05ad5f2c1e70b48
