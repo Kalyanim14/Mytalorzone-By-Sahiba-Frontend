@@ -1,8 +1,4 @@
-export const fetchCart = async () => {
-    const response = await fetch('/api/cart');
-    return response.json();
-  };
-  // cartService.js
+// cartService.js
 
 // Fetch the cart data
 export const fetchCart = async () => {
