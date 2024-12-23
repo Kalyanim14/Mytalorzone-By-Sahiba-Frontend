@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { fetchCart, addToCart } from '../services/cartService'; // Assuming you have addToCart method
+import { fetchCart, addToCart } from '../services/cartService';  // Import both functions
 import './Home.css';
 
 const Cart = () => {
-  const [cart, setCart] = useState([]);
-  
-  // Fetch the cart when the component mounts
+  const [cart, setCart] = useState([]);  // State for storing cart items
+  const [newItem, setNewItem] = useState({});  // State for new item to add to cart
+
   useEffect(() => {
     const getCart = async () => {
-      const response = await fetchCart();
-      setCart(response);
+      const cartData = await fetchCart();  // Fetch the current cart data
+      setCart(cartData);  // Set the cart data in state
     };
     getCart();
   }, []);
 
-  // Function to handle adding an item to the cart
-  const handleAddToCart = async (product) => {
-    const updatedCart = await addToCart(product); // Assuming addToCart sends a request to add an item
-    setCart(updatedCart); // Update cart state with the new cart data
-  };
+  const totalAmount = cart.reduce(
+    (acc, item) => acc + item.productQty * item.productPrice, 
+    0
+  );  // Calculate total amount for the cart
 
-  // Calculate total amount
-  const totalAmount = cart.reduce((acc, item) => acc + item.productQty * item.productPrice, 0);
+  const handleAddToCart = async () => {
+    const updatedCart = await addToCart(newItem);  // Call addToCart with the new item
+    setCart(updatedCart);  // Update the cart with the new items
+  };
 
   return (
     <div className="cart-page">
       <h1>Your Cart</h1>
-      
       <div className="cart-items">
         {cart.map(item => (
           <div key={item.productId} className="cart-item">
@@ -36,18 +36,29 @@ const Cart = () => {
           </div>
         ))}
       </div>
-      
-      {/* Example Add Item to Cart Button */}
-      <button onClick={() => handleAddToCart({ 
-        productId: 1, 
-        productName: 'T-shirt', 
-        productQty: 1, 
-        productPrice: 299 
-      })}>
-        Add T-shirt to Cart
-      </button>
-      
+
       <h2>Total: {totalAmount}</h2>
+
+      {/* Example form for adding a new item */}
+      <div className="add-item-form">
+        <input
+          type="text"
+          placeholder="Product Name"
+          onChange={(e) => setNewItem({ ...newItem, productName: e.target.value })}
+        />
+        <input
+          type="number"
+          placeholder="Quantity"
+          onChange={(e) => setNewItem({ ...newItem, productQty: e.target.value })}
+        />
+        <input
+          type="number"
+          placeholder="Price"
+          onChange={(e) => setNewItem({ ...newItem, productPrice: e.target.value })}
+        />
+        <button onClick={handleAddToCart}>Add to Cart</button>
+      </div>
+
       <button>Checkout</button>
     </div>
   );
