@@ -1,0 +1,76 @@
+/* product-card.css */
+
+/* Basic Styling for Product Card */
+.product-card {
+    border: 1px solid #ddd; /* Light border around the card */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensures the content stays within the card */
+    background-color: #fff; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+    width: 250px; /* Fixed width */
+    padding: 20px; /* Space inside the card */
+    text-align: center; /* Center content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    margin: 15px; /* Space between cards */
+  }
+  
+  /* Hover effect on product card */
+  .product-card:hover {
+    transform: translateY(-5px); /* Slightly lift the card */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+  /* Product Image Styling */
+  .product-card img {
+    width: 100%; /* Make the image fill the card width */
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensure the image covers the area without distorting */
+    border-radius: 5px; /* Rounded corners for the image */
+  }
+  
+  /* Product Name Styling */
+  .product-card h3 {
+    font-size: 1.2rem; /* Slightly larger text */
+    color: #333; /* Dark text for visibility */
+    margin: 10px 0; /* Space above and below the name */
+    font-weight: bold;
+  }
+  
+  /* Product Category and Price Styling */
+  .product-card p {
+    font-size: 1rem;
+    color: #666; /* Lighter color for category and price */
+    margin: 5px 0; /* Space between elements */
+  }
+  
+  /* Button Styling */
+  .product-card button {
+    background-color: #2563eb; /* Blue background */
+    color: white; /* White text */
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Space above the button */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Button Hover Effect */
+  .product-card button:hover {
+    background-color: #1d4ed8; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slightly lift the button */
+  }
+  
+  /* Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    .product-card {
+      width: 100%; /* Make the card full width on smaller screens */
+      margin: 10px 0; /* Adjust margin for mobile */
+    }
+  
+    .product-card img {
+      height: 150px; /* Adjust image size for mobile */
+    }
+  }
+  

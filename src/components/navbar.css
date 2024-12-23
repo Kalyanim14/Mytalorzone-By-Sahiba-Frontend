@@ -1,0 +1,83 @@
+/* Import Pacifico font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.navbar {
+    background-color: #1e3a8a; /* Deep blue background */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Brand Name Styling */
+.navbar .brand-name {
+    font-family: 'Pacifico', cursive; /* Pacifico font */
+    font-size: 2rem; /* Increase the font size */
+    color: #ffffff; /* White color for text */
+    margin-right: auto; /* Push the brand name to the left */
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for emphasis */
+}
+h2{
+    font-size: 2.5rem;
+    color: aliceblue;
+    margin-bottom: 1.5rem;
+    font-size: 45px;
+  }
+
+/* Navbar Menu */
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin: 0;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #ffffff; /* White text */
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active {
+    background-color: #2563eb; /* Lighter blue for hover */
+    color: #afd53e; /* Orange text for active links */
+    text-shadow: 0 0 5px rgba(249, 115, 22, 0.7); /* Subtle glow for emphasis */
+}
+
+.navbar-menu a:focus {
+    outline: none;
+    border: 2px solid #afd53e; /* Orange border for focus */
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .navbar-menu a {
+        text-align: left;
+        width: 100%;
+    }
+}
